@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Data Pipeline - Project Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DE</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-detail-header">
+                <button class="back-btn" onclick="window.location.href='index.html#projects'">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </button>
+                <h1 class="project-title">Real-time Data Pipeline</h1>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Duration: 6 months</span>
+                    <span><i class="fas fa-users"></i> Team Size: 5 Engineers</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Client: Financial Services</span>
+                </div>
+            </div>
+
+            <div class="project-detail-content">
+                <div class="project-image">
+                    <div class="detail-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Real-time Pipeline Dashboard</div>
+                            <div class="dashboard-status active">Active</div>
+                        </div>
+                        <div class="dashboard-metrics">
+                            <div class="metric-card">
+                                <div class="metric-value">120K</div>
+                                <div class="metric-label">Events/sec</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">99.9%</div>
+                                <div class="metric-label">Uptime</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">&lt;100ms</div>
+                                <div class="metric-label">Latency</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-graph">
+                            <div class="graph-placeholder">
+                                <div class="graph-lines">
+                                    <div class="line" style="height: 70%"></div>
+                                    <div class="line" style="height: 85%"></div>
+                                    <div class="line" style="height: 60%"></div>
+                                    <div class="line" style="height: 90%"></div>
+                                    <div class="line" style="height: 75%"></div>
+                                    <div class="line" style="height: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="project-section">
+                        <h2>Project Overview</h2>
+                        <p>This project involved building a scalable real-time data pipeline to process financial transaction data for a major banking client. The system handles over 120,000 events per second with sub-100ms latency, providing critical business insights for fraud detection and risk assessment.</p>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Challenges</h2>
+                        <ul class="challenge-list">
+                            <li>Handling massive volume of transactions with minimal latency</li>
+                            <li>Ensuring data consistency and accuracy across distributed systems</li>
+                            <li>Implementing fault-tolerant mechanisms for zero data loss</li>
+                            <li>Meeting strict regulatory compliance requirements</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Solution & Implementation</h2>
+                        <p>We architected a robust pipeline using Apache Kafka for message queuing, Apache Spark Streaming for real-time processing, and Cassandra for high-performance storage. The system was deployed on AWS with auto-scaling capabilities to handle traffic spikes.</p>
+                        
+                        <div class="tech-stack">
+                            <h3>Technology Stack</h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Apache Kafka</span>
+                                <span class="tech-tag">Spark Streaming</span>
+                                <span class="tech-tag">Cassandra</span>
+                                <span class="tech-tag">AWS EC2</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Results & Achievements</h2>
+                        <div class="achievements">
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Performance</h3>
+                                    <p>Reduced processing latency from 5 seconds to &lt;100ms</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Scalability</h3>
+                                    <p>Successfully scaled to handle 300% increase in data volume</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Reliability</h3>
+                                    <p>Achieved 99.99% uptime with zero data loss</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Business Impact</h3>
+                                    <p>Enabled detection of fraudulent transactions 10x faster</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Data Engineer</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#skills">Skills</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#experience">Experience</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Data Engineer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

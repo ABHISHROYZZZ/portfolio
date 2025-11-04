@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Feature Store - Project Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DE</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-detail-header">
+                <button class="back-btn" onclick="window.location.href='index.html#projects'">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </button>
+                <h1 class="project-title">ML Feature Store</h1>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Duration: 5 months</span>
+                    <span><i class="fas fa-users"></i> Team Size: 4 Engineers</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Client: Tech Startup</span>
+                </div>
+            </div>
+
+            <div class="project-detail-content">
+                <div class="project-image">
+                    <div class="detail-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Feature Store Dashboard</div>
+                            <div class="dashboard-status active">Active</div>
+                        </div>
+                        <div class="dashboard-metrics">
+                            <div class="metric-card">
+                                <div class="metric-value">15+</div>
+                                <div class="metric-label">ML Models</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">95%</div>
+                                <div class="metric-label">Consistency</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">60%</div>
+                                <div class="metric-label">Time Saved</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-graph">
+                            <div class="graph-placeholder">
+                                <div class="network-graph">
+                                    <div class="node node-1"></div>
+                                    <div class="node node-2"></div>
+                                    <div class="node node-3"></div>
+                                    <div class="node node-4"></div>
+                                    <div class="connection"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="project-section">
+                        <h2>Project Overview</h2>
+                        <p>This project involved developing a feature store for machine learning models to enable consistent feature engineering across multiple models. The solution centralized feature definitions, computation, and serving, reducing inconsistencies and improving model performance for a tech startup with 15+ ML models in production.</p>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Challenges</h2>
+                        <ul class="challenge-list">
+                            <li>Inconsistent feature definitions across different models</li>
+                            <li>Redundant feature computation leading to inefficiencies</li>
+                            <li>Lack of feature versioning and lineage tracking</li>
+                            <li>Difficulty in reproducing model training environments</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Solution & Implementation</h2>
+                        <p>We implemented a feature store using Feast as the core framework, backed by Redis for online feature serving and BigQuery for offline storage. Developed custom connectors for data sources and established automated pipelines for feature computation and validation.</p>
+                        
+                        <div class="tech-stack">
+                            <h3>Technology Stack</h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Feast</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">BigQuery</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Kubernetes</span>
+                                <span class="tech-tag">Airflow</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Results & Achievements</h2>
+                        <div class="achievements">
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Consistency</h3>
+                                    <p>Achieved 95% consistency in feature definitions across all models</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Efficiency</h3>
+                                    <p>Reduced feature engineering time by 60% through reuse</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Versioning</h3>
+                                    <p>Implemented complete feature versioning and lineage tracking</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Model Performance</h3>
+                                    <p>Improved model accuracy by 12% through consistent features</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Data Engineer</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#skills">Skills</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#experience">Experience</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Data Engineer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
