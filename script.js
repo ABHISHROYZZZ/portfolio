@@ -1,20 +1,51 @@
 // Add parallax effect to background shapes
+// Enhanced 3D parallax effect with more realistic depth
 document.addEventListener('DOMContentLoaded', function() {
     const background = document.querySelector('.background-3d');
     const shapes = document.querySelectorAll('.floating-shape');
+    const body = document.querySelector('body');
     
+    // Enhanced mouse move effect with smoother transitions
+    let currentX = 0;
+    let currentY = 0;
+    let targetX = 0;
+    let targetY = 0;
+    
+    // Add subtle 3D tilt effect to the entire page
     document.addEventListener('mousemove', (e) => {
-        const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-        const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        targetX = (window.innerWidth / 2 - e.pageX) / 25;
+        targetY = (window.innerHeight / 2 - e.pageY) / 25;
+        
+        // Apply subtle 3D tilt to the entire page
+        const tiltX = (e.clientY / window.innerHeight - 0.5) * 5;
+        const tiltY = (e.clientX / window.innerWidth - 0.5) * -5;
+        
+        body.style.perspective = '1000px';
+        body.style.transformStyle = 'preserve-3d';
+        body.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+    
+    // Smooth animation loop
+    function animate() {
+        // Smooth interpolation for more natural movement
+        currentX += (targetX - currentX) * 0.05;
+        currentY += (targetY - currentY) * 0.05;
         
         shapes.forEach((shape, index) => {
             const speed = (index + 1) * 0.5;
-            const x = xAxis * speed;
-            const y = yAxis * speed;
+            const x = currentX * speed;
+            const y = currentY * speed;
             
-            shape.style.transform = `translate(${x}px, ${y}px) translateZ(${-50 - index * 10}px)`;
+            // Add subtle scaling effect based on position
+            const scale = 1 + Math.abs(x + y) * 0.001;
+            
+            shape.style.transform = `translate(${x}px, ${y}px) translateZ(${-50 - index * 10}px) scale(${scale})`;
         });
-    });
+        
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
 });
 
 // Mobile Navigation Toggle
@@ -60,72 +91,89 @@ const sendBtn = document.getElementById('send-btn');
 
 // Knowledge base for the AI assistant
 const knowledgeBase = {
-    name: "Data Engineer",
+    name: "Abhishek Kumar",
     skills: [
-        "Apache Spark", "Apache Kafka", "Hadoop", "ETL/ELT", 
-        "SQL/NoSQL", "AWS/Azure/GCP", "Snowflake", "Docker/Kubernetes",
-        "Python", "Scala", "Airflow", "Git/CI-CD"
+        "Python", "JavaScript", "Java", "C/C++", "ReactJS", "Flutter", 
+        "TensorFlow", "OpenCV", "Deep Learning", "MySQL", "Firebase", "MongoDB",
+        "Git", "Node.js", "AWS", "Docker", "HTML/CSS", "UI/UX"
     ],
     projects: [
         {
-            name: "Real-time Data Pipeline",
-            description: "Built a scalable real-time data pipeline using Kafka, Spark Streaming, and Cassandra to process 100k+ events per second.",
-            technologies: ["Kafka", "Spark", "Cassandra"]
+            name: "3D AR/VR Skin Cancer Detection & Alzheimer Detection App",
+            description: "Developed deep learning-based models integrated with Android and React interfaces for real-time medical image analysis.",
+            technologies: ["Deep Learning", "Android", "React", "TensorFlow"]
         },
         {
-            name: "Cloud Data Warehouse",
-            description: "Designed and implemented a cloud-native data warehouse on Snowflake, reducing query times by 70% and costs by 40%.",
-            technologies: ["Snowflake", "AWS", "dbt"]
+            name: "Online Banking Application & Employee Time Tracker",
+            description: "Engineered a secure Java-based web application using JSP, Servlets, and MySQL; implemented time-tracking analytics and database connectivity.",
+            technologies: ["Java", "JSP/Servlets", "MySQL"]
         },
         {
-            name: "ML Feature Store",
-            description: "Developed a feature store for machine learning models, enabling consistent feature engineering across 15+ models.",
-            technologies: ["Feast", "Redis", "Python"]
+            name: "Product Recommendation System for E-Commerce Platform",
+            description: "ML-based product recommendation system for e-commerce platforms using CNN and Wavelet. Published in IEEE.",
+            technologies: ["Machine Learning", "CNN", "Wavelet"]
         }
     ],
     experience: [
         {
-            position: "Senior Data Engineer",
-            company: "Tech Solutions Inc.",
-            period: "2022 - Present",
-            description: "Led the migration of legacy data systems to cloud-native architecture, improving data processing speed by 300%."
+            position: "Technical Consultant Engineer",
+            company: "Genpact",
+            period: "2025 - Present",
+            description: "Working on client-driven technology consulting and implementation projects involving automation, system optimization, and data integration."
         },
         {
-            position: "Data Engineer",
-            company: "Data Insights Co.",
-            period: "2020 - 2022",
-            description: "Developed and maintained ETL pipelines processing 5TB+ of data daily."
+            position: "Data Science Engineer",
+            company: "NRSC, ISRO Hyderabad",
+            description: "Led end-to-end data analysis pipelines with preprocessing, feature engineering, and visualization using Matplotlib and Seaborn."
         },
         {
-            position: "Junior Data Analyst",
-            company: "Analytics First Ltd.",
-            period: "2019 - 2020",
-            description: "Analyzed customer behavior data to support marketing campaigns."
+            position: "Web Development Engineer",
+            company: "Nexus Info Service Limited, Coimbatore",
+            description: "Optimized websites for SEO and performance, achieving a 55% faster load time."
         }
     ],
     certifications: [
         {
-            name: "AWS Certified Data Analytics",
+            name: "AWS Academy: Cloud Foundations",
             issuer: "Amazon Web Services",
-            date: "Jan 2023"
+            date: "2024"
         },
         {
-            name: "Google Professional Data Engineer",
-            issuer: "Google Cloud Platform",
-            date: "Mar 2022"
+            name: "AWS Academy: Machine Learning Foundations",
+            issuer: "Amazon Web Services",
+            date: "2024"
         },
         {
-            name: "Databricks Lakehouse Fundamentals",
-            issuer: "Databricks Academy",
-            date: "Jun 2022"
+            name: "CCNA: Introduction to Networks",
+            issuer: "Cisco Networking Academy",
+            date: "2023"
         },
         {
-            name: "Apache Spark Developer",
-            issuer: "Databricks Academy",
-            date: "Sep 2021"
+            name: "CCNA: Cybersecurity Essentials",
+            issuer: "Cisco Networking Academy",
+            date: "2023"
         }
     ],
-    approach: "I combine technical excellence with business acumen to deliver data systems that drive real value. I thrive in dynamic environments where I can leverage cutting-edge technologies to solve meaningful problems."
+    achievements: [
+        "National-Level Hackathon Winner: Led and won multiple hackathons across India, including IIT Roorkee Productathon-AI (Rank 3rd nationally among 800+ participants)",
+        "Selected participant, Amazon Machine Learning School",
+        "Led workshops and hackathons as part of Google Developer Student Club",
+        "Recognized for leadership and technical excellence in over 10+ hackathon projects"
+    ],
+    education: [
+        {
+            degree: "B.Tech in Computer Science and Design (AIML)",
+            institution: "Vel Tech University, Chennai, India",
+            period: "2021-2025",
+            details: "Current CGPA: 9.0"
+        },
+        {
+            degree: "12th (BSEB)",
+            institution: "Hasanpur College, Bihar, India",
+            details: "Scored 63% in Boards"
+        }
+    ],
+    approach: "I combine technical excellence with creative problem-solving to deliver impactful technology solutions. I thrive in dynamic environments where I can leverage cutting-edge technologies to solve meaningful problems."
 };
 
 // Function to generate AI responses
@@ -134,35 +182,47 @@ function generateResponse(userMessage) {
     
     // Greetings
     if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-        return `Hello! I'm here to tell you about the portfolio owner. You can ask me about their skills, projects, experience, certifications, or approach to data engineering!`;
+        return `Hello! I'm here to tell you about Abhishek Kumar. You can ask me about his skills, projects, experience, certifications, or approach to software engineering!`;
     }
     
     // About/name
     if (message.includes('name') || message.includes('who are you')) {
-        return `I'm an AI assistant representing the portfolio owner, a skilled Data Engineer. They specialize in building robust data infrastructure and transforming complex data challenges into elegant solutions.`;
+        return `I'm an AI assistant representing Abhishek Kumar, a skilled Computer Science and AI/ML Engineering student. He specializes in creating innovative solutions through code and has won multiple hackathons including ranking 3rd nationally at IIT Roorkee Productathon-AI.`;
     }
     
     // Skills
-    if (message.includes('skill') || message.includes('technology') || message.includes('tool')) {
-        return `The portfolio owner has expertise in: ${knowledgeBase.skills.join(', ')}. They're particularly skilled in Apache Spark, Python, and cloud technologies like AWS and Azure.`;
+    if (message.includes('skill') || message.includes('technology') || message.includes('tool') || message.includes('programming')) {
+        return `Abhishek has expertise in: ${knowledgeBase.skills.join(', ')}. He's particularly skilled in Python, TensorFlow, and cloud technologies like AWS.`;
     }
     
     // Projects
-    if (message.includes('project') || message.includes('work')) {
+    if (message.includes('project') || message.includes('work') || message.includes('portfolio')) {
         const project = knowledgeBase.projects[Math.floor(Math.random() * knowledgeBase.projects.length)];
-        return `One of their featured projects is "${project.name}": ${project.description} Technologies used include ${project.technologies.join(', ')}. You can view detailed information about this project by clicking on the project card in the portfolio.`;
+        return `One of his featured projects is "${project.name}": ${project.description} Technologies used include ${project.technologies.join(', ')}. You can view detailed information about this project by clicking on the project card in the portfolio.`;
     }
     
     // Experience
-    if (message.includes('experience') || message.includes('background') || message.includes('career')) {
+    if (message.includes('experience') || message.includes('background') || message.includes('career') || message.includes('work')) {
         const exp = knowledgeBase.experience[0]; // Most recent experience
-        return `They currently work as a ${exp.position} at ${exp.company} (${exp.period}). ${exp.description}`;
+        return `He currently works as a ${exp.position} at ${exp.company} (${exp.period || 'Current'}). ${exp.description}`;
     }
     
     // Certifications
     if (message.includes('certification') || message.includes('certificate')) {
         const cert = knowledgeBase.certifications[Math.floor(Math.random() * knowledgeBase.certifications.length)];
-        return `They are certified in "${cert.name}" from ${cert.issuer}, issued in ${cert.date}. You can view all their certifications in the dedicated section of the portfolio.`;
+        return `He is certified in "${cert.name}" from ${cert.issuer}, issued in ${cert.date}. You can view all his certifications in the dedicated section of the portfolio.`;
+    }
+    
+    // Education
+    if (message.includes('education') || message.includes('study') || message.includes('university') || message.includes('college')) {
+        const edu = knowledgeBase.education[0]; // Current education
+        return `He is currently pursuing ${edu.degree} at ${edu.institution} (${edu.period}). ${edu.details}`;
+    }
+    
+    // Achievements
+    if (message.includes('achievement') || message.includes('award') || message.includes('hackathon') || message.includes('accomplishment')) {
+        const achievement = knowledgeBase.achievements[Math.floor(Math.random() * knowledgeBase.achievements.length)];
+        return achievement;
     }
     
     // Approach/philosophy
@@ -171,17 +231,17 @@ function generateResponse(userMessage) {
     }
     
     // Contact
-    if (message.includes('contact') || message.includes('email') || message.includes('reach')) {
-        return `You can reach the portfolio owner via email at youremail@example.com or connect with them on LinkedIn at linkedin.com/in/yourprofile.`;
+    if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('reach')) {
+        return `You can reach Abhishek Kumar via email at abhkumar2709@gmail.com or phone at +91 7004312630. You can also connect with him on LinkedIn at linkedin.com/in/abhishek-kumar-a62182208.`;
     }
     
     // Default response
     const responses = [
-        "That's an interesting question! The portfolio owner is a data engineering specialist with expertise in building scalable data pipelines.",
-        "I'd be happy to tell you more about their work! They focus on transforming raw data into actionable insights.",
-        "They have extensive experience in cloud data solutions and real-time processing systems. Is there a specific aspect you'd like to know more about?",
-        "As a data engineer, they're passionate about creating efficient, reliable data infrastructure. What would you like to know about their approach?",
-        "You can find detailed information about their projects, skills, and experience by exploring the different sections of this portfolio."
+        "That's an interesting question! Abhishek Kumar is a Computer Science and AI/ML Engineering student with expertise in creating innovative technology solutions.",
+        "I'd be happy to tell you more about his work! He focuses on combining technical excellence with creative problem-solving.",
+        "He has extensive experience in full-stack development, AI/ML projects, and cloud technologies. Is there a specific aspect you'd like to know more about?",
+        "As a tech enthusiast, he's passionate about AR/VR, deep learning, and innovative tech solutions. What would you like to know about his approach?",
+        "You can find detailed information about his projects, skills, and experience by exploring the different sections of this portfolio."
     ];
     
     return responses[Math.floor(Math.random() * responses.length)];
@@ -229,7 +289,7 @@ userInput.addEventListener('keypress', (e) => {
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         if (chatMessages) {
-            addMessage("Hi there! I'm the portfolio assistant. Ask me anything about the portfolio owner's skills, projects, experience, or certifications!");
+            addMessage("Hi there! I'm the portfolio assistant. Ask me anything about Abhishek Kumar's skills, projects, experience, or certifications!");
         }
     }, 1000);
 });
@@ -265,11 +325,26 @@ document.querySelectorAll('section').forEach(section => {
 });
 
 // Project card click effect
+// Enhanced 3D click effect with more realistic physics
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', function() {
-        this.style.transform = 'translateY(-10px) translateZ(30px) rotateX(5deg) scale(1.02)';
+        // Enhanced 3D press effect
+        this.style.transform = 'translateY(-5px) translateZ(40px) rotateX(8deg) rotateY(5deg) scale(0.98)';
+        this.style.transition = 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        
         setTimeout(() => {
             this.style.transform = '';
+            this.style.transition = '';
         }, 300);
     });
+    
+    // Add hover effect for more realistic 3D feel
+    card.addEventListener('mouseenter', function() {
+        this.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    });
 });
+
